@@ -11,18 +11,30 @@ public class StringUtils {
         /* Generate the long version of the name first:
             Ex: firstName = "Sean", lastName = "Flannery"
                     --> res = "SFlannery"
+
          */
-        String res = firstName.substring(0,1) + lastName;
+        String res = "" ;
+        String f = firstName.toLowerCase();
+        String l = lastName.toLowerCase();
+        if(lastName.length() > 8) {
+             res = f.substring(0, 1) + l.substring(0, 7);
+        }
+        if(lastName.length() < 9) {
+             res = f.substring(0, 1) + l;
+        }
         /* Shorten the string to 8 characters
             Ex: res = "SFlannery"
                     --> res = "SFlanner"
          */
-        res.substring(0, 8);
+
+
+        //res.substring(0, 8);
         /* Convert the name to lower-case
             Ex: res = "SFlanner"
                     --> res = "sflanner"
          */
-        res.toLowerCase();
+        //res.toLowerCase();
+
         /* return the result of our calculation */
         return res;
     }
@@ -36,6 +48,6 @@ public class StringUtils {
      */
     public static String replaceStudentUsername(String text, String username) {
         /* Replace every instance of the username with proper message */
-        return text.replaceAll(username, "[DATA EXPUNDGED]");
+        return text.replaceAll(username, "[DATA EXPUNGED]");
     }
 }
